@@ -11,73 +11,66 @@ YT: KermHackTools
 Github: Kgtech-cmr
 */ 
 
-const { downloadAndSaveMediaMessage } = require('@whiskeysockets/baileys');
+const config = require('../config');
+const { cmd, commands } = require('../command');
+const { proto, downloadContentFromMessage } = require('baileys');
+const { sms,downloadMediaMessage } = require('../lib/msg2');
 const fs = require('fs');
-const { cmd } = require('../command');
+const exec = require('child_process');
+const path = require('path');
+const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, sleep, fetchJson } = require('../Lib/functions');
 
-cmd(
-  {
-    pattern: 'vv',
-    react: '💾',
-    desc: 'Save quoted media message',
-    category: 'utility',
-    use: '.vv (reply to media)',
-    filename: __filename,
-  },
-  async (bot, message, args, { from, quoted, reply }) => {
-    let filePath;
+const prefix = config.PREFIX;
+
+cmd({
+    pattern: "vv",
+    desc: "Get view once.",
+    category: "owner",
+    react: "👀",
+    filename: __filename
+}, async (conn, mek, m, { isReply, quoted, reply }) => {
     try {
-      // Retrieve the media message (either quoted or the current one)
-      const mediaMessage = quoted || message;
-      if (!mediaMessage || !mediaMessage.message) {
-        return reply('Please reply to a media message');
-      }
+        // Check if the message is a view once message
+        if (!m.quoted) return reply("Please reply to a view once message!");
 
-      // Unwrap the message in case it's ephemeral or view-once
-      let messageContent = mediaMessage.message;
-      if (messageContent.ephemeralMessage) {
-        messageContent = messageContent.ephemeralMessage.message;
-      } else if (messageContent.viewOnceMessage) {
-        messageContent = messageContent.viewOnceMessage.message;
-      }
+        const qmessage = m.message.extendedTextMessage.contextInfo.quotedMessage;
 
-      // Extract media content (image, video, or document)
-      const mediaContent =
-        messageContent.imageMessage ||
-        messageContent.videoMessage ||
-        messageContent.documentMessage;
+            const mediaMessage = qmessage.imageMessage ||
+                                qmessage.videoMessage ||
+                                qmessage.audioMessage;
 
-      if (!mediaContent || !mediaContent.mimetype) {
-        return reply('Please reply to a media message');
-      }
+            if (!mediaMessage?.viewOnce) {
+              return reply("_Not A VV message")
+            }
 
-      // Download the media file
-      filePath = await downloadAndSaveMediaMessage(mediaMessage, {});
-      if (!filePath) return reply('Failed to download media');
+            try {
+            const buff = await m.quoted.getbuff
+            const cap = mediaMessage.caption || '';
 
-      // Determine media type and get caption if available
-      const isImage = mediaContent.mimetype.startsWith('image/');
-      const caption = mediaContent.caption || '';
-
-      // Resend the media with the original caption
-      await bot.sendMessage(
-        from,
-        {
-          [isImage ? 'image' : 'video']: { url: filePath },
-          caption: caption,
-        },
-        { quoted: message }
-      );
-
-      reply('Media saved successfully!');
+            if (mediaMessage.mimetype.startsWith('image')) {
+                  await conn.sendMessage(m.chat, {
+                  image: buff,
+                 caption: cap
+         }); 
+            } else if (mediaMessage.mimetype.startsWith('video')) {
+              await conn.sendMessage(m.chat, {
+                  video: buff,
+                 caption: cap
+         }); 
+            } else if (mediaMessage.mimetype.startsWith('audio')) {
+              await conn.sendMessage(m.chat, {
+                  audio: buff,
+                  ptt: mediaMessage.ptt || false
+         }); 
+            } else {
+              return reply("_*Unkown/Unsupported media*_");
+        }
     } catch (error) {
-      console.error('Save error:', error);
-      reply('Failed to save media. Please try again.');
-    } finally {
-      // Clean up the temporary file if it exists
-      if (filePath && fs.existsSync(filePath)) {
-        fs.unlinkSync(filePath);
-      }
+        console.error(error);
+        reply(`${error}`)
     }
-  }
-);
+} catch (e) {
+  console.error(e);
+        reply(`${e}`);
+}
+});
