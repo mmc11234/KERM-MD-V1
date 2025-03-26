@@ -26,7 +26,7 @@
     },
     
     "PREFIX": {
-      "description": "paste your bot prefix note! Don't apply null prefix.",
+      "description": "paste your bot prefix note! Don't apply null please prefix.",
       "required": true,
       "value": "."
     },
