@@ -91,7 +91,7 @@
 
 ------------
  
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new-app?template=https://github.com/Giffareno237/KERM-MD-V1/#Kerm-update-code)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new-app?template=https://github.com/Giffareno237/KERM-MD-V1)
 
 ----------
 
