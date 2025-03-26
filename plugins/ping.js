@@ -17,7 +17,7 @@ const os = require("os")
 const { cmd, commands } = require('../command')
 const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson} = require('../lib/functions')
 cmd({
-    pattern: "ping",
+    pattern: "ping2",
     react: "📟",
     alias: ["speed"],
     desc: "Check bot\'s ping",
@@ -39,7 +39,7 @@ l(e)
 })
 
 cmd({
-    pattern: "ping2",
+    pattern: "ping3",
     react: "♻️",
     alias: ["speed"],
     desc: "Check bot\'s ping",
@@ -100,7 +100,7 @@ async (conn, mek, m, { from, quoted, sender, reply }) => {
                 forwardingScore: 999,
                 isForwarded: false,
                 forwardedNewsletterMessageInfo: {
-                    newsletterJid: '120363318387454868@newsletter',
+                    newsletterJid: '120363321386877609@newsletter',
                     newsletterName: "𝒦ℰℛℳ ℳ𝒟 𝐏๏፝֟ƞ̽g",
                     serverMessageId: 143
                 }
