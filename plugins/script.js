@@ -81,7 +81,7 @@ cmd({
     filename: __filename,
 },
 async (conn, mek, m, { from, reply }) => {
-    const githubRepoURL = 'https://github.com/Kgtech-cmr/KERM-MD-V1';
+    const githubRepoURL = 'https://github.com/Giffareno237/KERM-MD-V1';
 
     try {
         // Extract username and repo name from the URL
@@ -105,7 +105,7 @@ async (conn, mek, m, { from, reply }) => {
 
 > Don't forget to star & fork the repo🌟🍴
 
-https://github.com/Kgtech-cmr/KERM-MD-V1
+https://github.com/Giffareno237/KERM-MD-V1
 ──────────────────
 ${readMore}
 \`BOT NAME:\`❄️

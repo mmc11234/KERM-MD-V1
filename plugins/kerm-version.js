@@ -40,7 +40,7 @@ cmd({
     }
 
     // Fetch latest version data from GitHub
-    const rawVersionUrl = 'https://raw.githubusercontent.com/Kgtech-cmr/KERM-MD-V1/main/DATABASE/version.json';
+    const rawVersionUrl = 'https://raw.githubusercontent.com/Giffareno237/KERM-MD-V1/main/DATABASE/version.json';
     let latestVersion = 'Unknown';
     let latestChangelog = 'No changelog available.';
     try {

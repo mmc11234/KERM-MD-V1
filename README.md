@@ -17,10 +17,10 @@
 --------
 
 <p align="center">
-<a href="https://github.com/Giffareno237/"><img title="Followers" src="https://img.shields.io/github/followers/Kgtech-cmr?color=blue&style=flat-square"></a>
-<a href="https://github.com/Giffareno237/KERM-MD-V1/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/Kgtech-cmr/KERM-MD-V1?color=blue&style=flat-square"></a>
-<a href="https://github.com/Giffareno237/KERM-MD-V1/network/members"><img title="Forks" src="https://img.shields.io/github/forks/Kgtech-cmr/KERM-MD-V1?color=blue&style=flat-square"></a>
-<a href="https://github.com/Giffareno237/KERM-MD-V1"><img title="Size" src="https://img.shields.io/github/repo-size/Kgtech-cmr/KERM-MD-V1?style=flat-square&color=blue"></a>
+<a href="https://github.com/Giffareno237/"><img title="Followers" src="https://img.shields.io/github/followers/Giffareno237?color=blue&style=flat-square"></a>
+<a href="https://github.com/Giffareno237/KERM-MD-V1/stargazers/"><img title="Stars" src="https://img.shields.io/github/stars/Giffareno237/KERM-MD-V1?color=blue&style=flat-square"></a>
+<a href="https://github.com/Giffareno237/KERM-MD-V1/network/members"><img title="Forks" src="https://img.shields.io/github/forks/Giffareno237/KERM-MD-V1?color=blue&style=flat-square"></a>
+<a href="https://github.com/Giffareno237/KERM-MD-V1"><img title="Size" src="https://img.shields.io/github/repo-size/Giffareno237/KERM-MD-V1?style=flat-square&color=blue"></a>
 <a href="https://github.com/Giffareno237/KERM-MD-V1/graphs/commit-activity"><img height="20" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg"></a>&nbsp;&nbsp;
 </p>
 <p align='center'>
@@ -109,7 +109,7 @@
 
 -------------
 
-<p align="left"><a href="https://repl.it/github/Kgtech-cmr/KERM-MD-V1"> <img src='https://img.shields.io/badge/-REPLIT-orange?style=for-the-badge&logo=replit&logoColor=white'/></a>
+<p align="left"><a href="https://repl.it/github/Giffareno237/KERM-MD-V1"> <img src='https://img.shields.io/badge/-REPLIT-orange?style=for-the-badge&logo=replit&logoColor=white'/></a>
 
 --------------
 
