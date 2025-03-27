@@ -16,7 +16,6 @@ Github: Kgtech-cmr
 const { cmd, commands } = require("../command");
 const fs = require("fs");
 const path = require("path");
-const { cmd, msg } = require("../lib");
 
 cmd({
   pattern: "save",
